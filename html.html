@@ -1,0 +1,66 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>           
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Math Equation</title>
+    <style>
+        input, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simple Math Equation</h1>
+
+    <form id="mathForm">
+        <label for="num1">Number 1:</label>
+        <input type="text" id="num1" name="num1" required>
+        
+        <label for="operator">Operator (+, -, *, /):</label>
+        <input type="text" id="operator" name="operator" required>
+        
+        <label for="num2">Number 2:</label>
+        <input type="text" id="num2" name="num2" required>
+
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+
+    <p id="result">Result: </p>
+
+    <script>
+        function calculate() {
+            // Get input values
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var operator = document.getElementById('operator').value;
+            var num2 = parseFloat(document.getElementById('num2').value);
+
+            // Perform the calculation
+            var result;
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = 'Invalid operator';
+            }
+
+            // Display the result
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+    </script>
+
+</body>
+</html>
+```
